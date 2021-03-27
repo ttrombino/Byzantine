@@ -42,8 +42,12 @@ public:
         return hash;
     }
 
+    void setBlockNum(unsigned block) {
+        blockNum = block;
+    }
+
     void printTransaction() {
-        std::cout << "Transaction:           " << hash << std:: endl;
+        std::cout << "Transaction:             " << hash << std:: endl;
         std::cout << "  |Time:                 " << dt << std:: endl;
         std::cout << "  |Hash:                 " << hash << std::endl;
         std::cout << "  |Block:                " <<  blockNum << std::endl;

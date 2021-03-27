@@ -17,11 +17,16 @@ private:
     std::string merkleRoot;
     unsigned nonce;
     unsigned blockReward = 32;
+    std::string difficulty = "000";
+
+    std::string encodeIntToString(unsigned i);
 
 
-public
+public:
 
     Block(int blockNum);
+    void mineBlock();
+    std::vector<std::string> getTransactionHashes();
 
 
 };
