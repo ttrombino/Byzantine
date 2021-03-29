@@ -24,9 +24,8 @@ private:
 public:
 
 
-    Transaction(int block, int amt, std::string snd, std::string rec){
+    Transaction(int amt, std::string snd, std::string rec){
         DateTime time;
-        blockNum = block;
         amount = amt;
         senderAddr = snd;
         recAddr = rec;

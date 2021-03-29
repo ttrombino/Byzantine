@@ -86,6 +86,12 @@
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/Block.h">
 			<Option target="SHA"/>
 		</Unit>
+		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/Blockchain.cpp">
+			<Option target="SHA"/>
+		</Unit>
+		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/Blockchain.h">
+			<Option target="SHA"/>
+		</Unit>
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/DateTime.h">
 			<Option target="SHA"/>
 		</Unit>

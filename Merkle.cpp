@@ -16,12 +16,12 @@ std::string hash2(std::string &a, std::string &b) {
     std::string a1 = flipEndian(a);
     std::string b1 = flipEndian(b);
 
-    std::cout << "a1+b1: " << a1+b1 << std::endl;
+//    std::cout << "a1+b1: " << a1+b1 << std::endl;
 
     std::string h = sha256(a1+b1);
-    std::cout << "hash: " << h << std::endl;
+//    std::cout << "hash: " << h << std::endl;
     std::string returnH = flipEndian(h);
-    std::cout << "final: " << returnH << std::endl;
+//    std::cout << "final: " << returnH << std::endl;
     return returnH;
 }
 

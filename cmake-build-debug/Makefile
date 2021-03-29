@@ -169,6 +169,33 @@ Block.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/Block.cpp.s
 .PHONY : Block.cpp.s
 
+Blockchain.obj: Blockchain.cpp.obj
+
+.PHONY : Blockchain.obj
+
+# target to build an object file
+Blockchain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/Blockchain.cpp.obj
+.PHONY : Blockchain.cpp.obj
+
+Blockchain.i: Blockchain.cpp.i
+
+.PHONY : Blockchain.i
+
+# target to preprocess a source file
+Blockchain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/Blockchain.cpp.i
+.PHONY : Blockchain.cpp.i
+
+Blockchain.s: Blockchain.cpp.s
+
+.PHONY : Blockchain.s
+
+# target to generate assembly for a file
+Blockchain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/Blockchain.cpp.s
+.PHONY : Blockchain.cpp.s
+
 Merkle.obj: Merkle.cpp.obj
 
 .PHONY : Merkle.obj
@@ -289,6 +316,9 @@ help:
 	@echo ... Block.obj
 	@echo ... Block.i
 	@echo ... Block.s
+	@echo ... Blockchain.obj
+	@echo ... Blockchain.i
+	@echo ... Blockchain.s
 	@echo ... Merkle.obj
 	@echo ... Merkle.i
 	@echo ... Merkle.s

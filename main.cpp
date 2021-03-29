@@ -3,6 +3,8 @@
 #include "Merkle.h"
 #include "DateTime.h"
 #include "Transaction.h"
+#include "Block.h"
+#include "Blockchain.h"
 
 using std::string;
 using std::cout;
@@ -144,9 +146,26 @@ int main(int argc, char *argv[])
 //    hash2(a, b);
  */
 
-    Transaction tr(67878, 3, "J75k4ly", "fjdkIIejf12K");
-    tr.calculateHash();
-    tr.printTransaction();
+//    Transaction t1(3, "J75k4ly", "fjdkIIejf12K");
+//    Transaction t2(5, "fjdke84jkf", "fffffddd3e");
+//    Transaction t3(10, "f2719fj38fjd9", "a35b6eda63");
+//    Block b(0);
+//    t1.calculateHash();
+//    t2.calculateHash();
+//    t3.calculateHash();
+//
+//    b.addTransaction(t1);
+//    b.addTransaction(t2);
+//    b.addTransaction(t3);
+//
+//    b.mineBlock();
+
+    Blockchain bc;
+    bc.newTransaction(3, "J75k4ly", "fjdkIIejf12K");
+    bc.newTransaction(5, "fjdke84jkf", "fffffddd3e");
+    bc.newTransaction(10, "f2719fj38fjd9", "a35b6eda63");
+    bc.minePendingBlock();
+
 
 
     return 0;

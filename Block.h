@@ -5,28 +5,41 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 #include "Transaction.h"
+#include "Merkle.h"
 #include <vector>
 
 
 class Block {
 private:
     std::string hash;
-    std::string dt;
+    std::string timeCreated;
+    std::string timeMined;
     std::vector<Transaction> transactions;
-    unsigned number;
+    unsigned blockNum;
     std::string merkleRoot;
     unsigned nonce;
     unsigned blockReward = 32;
-    std::string difficulty = "000";
+    std::string prevHash;
+    std::string nextHash;
+    Block* prev;
+    Block* next;
+    std::string difficulty = "00000";
+    void computeHash(int n);
 
-    std::string encodeIntToString(unsigned i);
+
 
 
 public:
 
-    Block(int blockNum);
+    Block(unsigned blockNum);
     void mineBlock();
     std::vector<std::string> getTransactionHashes();
+    std::string getHash();
+    void addTransaction(Transaction& t);
+    void setNextBlock(Block* nextBlock);
+    void setPrevBlock(Block* nextBlock);
+    void printHeader();
+
 
 
 };

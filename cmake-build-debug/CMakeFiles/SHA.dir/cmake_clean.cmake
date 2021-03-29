@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SHA.dir/Block.cpp.obj"
+  "CMakeFiles/SHA.dir/Blockchain.cpp.obj"
   "CMakeFiles/SHA.dir/Merkle.cpp.obj"
   "CMakeFiles/SHA.dir/Transaction.cpp.obj"
   "CMakeFiles/SHA.dir/main.cpp.obj"

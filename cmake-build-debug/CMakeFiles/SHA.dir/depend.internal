@@ -5,6 +5,15 @@ CMakeFiles/SHA.dir/Block.cpp.obj
  C:/Users/Z/CLionProjects/Byzantine/Block.cpp
  C:/Users/Z/CLionProjects/Byzantine/Block.h
  C:/Users/Z/CLionProjects/Byzantine/DateTime.h
+ C:/Users/Z/CLionProjects/Byzantine/Merkle.h
+ C:/Users/Z/CLionProjects/Byzantine/Transaction.h
+ C:/Users/Z/CLionProjects/Byzantine/sha256.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj
+ C:/Users/Z/CLionProjects/Byzantine/Block.h
+ C:/Users/Z/CLionProjects/Byzantine/Blockchain.cpp
+ C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
+ C:/Users/Z/CLionProjects/Byzantine/DateTime.h
+ C:/Users/Z/CLionProjects/Byzantine/Merkle.h
  C:/Users/Z/CLionProjects/Byzantine/Transaction.h
  C:/Users/Z/CLionProjects/Byzantine/sha256.h
 CMakeFiles/SHA.dir/Merkle.cpp.obj
@@ -17,6 +26,8 @@ CMakeFiles/SHA.dir/Transaction.cpp.obj
  C:/Users/Z/CLionProjects/Byzantine/Transaction.h
  C:/Users/Z/CLionProjects/Byzantine/sha256.h
 CMakeFiles/SHA.dir/main.cpp.obj
+ C:/Users/Z/CLionProjects/Byzantine/Block.h
+ C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
  C:/Users/Z/CLionProjects/Byzantine/DateTime.h
  C:/Users/Z/CLionProjects/Byzantine/Merkle.h
  C:/Users/Z/CLionProjects/Byzantine/Transaction.h

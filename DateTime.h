@@ -7,6 +7,7 @@
 
 #include <string>
 #include <ctime>
+#include <stdio.h>
 
 
 class DateTime {
@@ -14,6 +15,16 @@ class DateTime {
 private:
 
     tm* local;
+    std::string padDT(unsigned t) {
+        std::string ret = "";
+        if (t < 10) {
+            ret+= "0" + std::to_string(t);
+        }
+        else {
+            ret = std::to_string(t);
+        }
+        return ret;
+    }
 
 
 public:
@@ -39,7 +50,14 @@ public:
     }
 
     std::string getDT() {
-        return std::to_string(year) + "-" + std::to_string(month) + "-" + std::to_string(day) + " " + std::to_string(hour) + ":" + std::to_string(min) + ":" + std::to_string(sec);
+        std::string fMonth = padDT(month);
+        std::string fDay = padDT(day);
+        std::string fHour = padDT(hour);
+        std::string fMin = padDT(min);
+        std::string fSec = padDT(sec);
+
+        return std::to_string(year) + "-" + fMonth + "-" + fDay + " " + fHour + ":" + fMin + ":" + fSec;
+
     }
 
     ~DateTime() {}

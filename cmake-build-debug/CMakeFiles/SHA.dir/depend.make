@@ -4,8 +4,17 @@
 CMakeFiles/SHA.dir/Block.cpp.obj: ../Block.cpp
 CMakeFiles/SHA.dir/Block.cpp.obj: ../Block.h
 CMakeFiles/SHA.dir/Block.cpp.obj: ../DateTime.h
+CMakeFiles/SHA.dir/Block.cpp.obj: ../Merkle.h
 CMakeFiles/SHA.dir/Block.cpp.obj: ../Transaction.h
 CMakeFiles/SHA.dir/Block.cpp.obj: ../sha256.h
+
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../Block.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../Blockchain.cpp
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../Blockchain.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../DateTime.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../Merkle.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../Transaction.h
+CMakeFiles/SHA.dir/Blockchain.cpp.obj: ../sha256.h
 
 CMakeFiles/SHA.dir/Merkle.cpp.obj: ../Merkle.cpp
 CMakeFiles/SHA.dir/Merkle.cpp.obj: ../Merkle.h
@@ -16,6 +25,8 @@ CMakeFiles/SHA.dir/Transaction.cpp.obj: ../Transaction.cpp
 CMakeFiles/SHA.dir/Transaction.cpp.obj: ../Transaction.h
 CMakeFiles/SHA.dir/Transaction.cpp.obj: ../sha256.h
 
+CMakeFiles/SHA.dir/main.cpp.obj: ../Block.h
+CMakeFiles/SHA.dir/main.cpp.obj: ../Blockchain.h
 CMakeFiles/SHA.dir/main.cpp.obj: ../DateTime.h
 CMakeFiles/SHA.dir/main.cpp.obj: ../Merkle.h
 CMakeFiles/SHA.dir/main.cpp.obj: ../Transaction.h
