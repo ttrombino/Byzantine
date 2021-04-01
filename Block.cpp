@@ -12,6 +12,8 @@ Block::Block(unsigned block) {
     nextHash = "";
     prevHash = "";
     blockNum = block;
+    next = NULL;
+    prev = NULL;
     nonce = 0;
 }
 
@@ -32,7 +34,7 @@ void Block::mineBlock() {
     std::cout << "Hash: " << hash << std::endl;
     std::cout << "Nonce: " << nonce << std::endl;
 
-    printHeader();
+    //printHeader();
 
 
 }
@@ -59,6 +61,10 @@ std::string Block::getHash(){
     return hash;
 }
 
+unsigned Block::getReward() {
+    return blockReward;
+}
+
 void Block::setNextBlock(Block* nextBlock) {
     next = nextBlock;
     nextHash = nextBlock->getHash();
@@ -79,4 +85,18 @@ void Block::printHeader() {
     std::cout << " |Merkle root: " << merkleRoot << std::endl;
     std::cout << " |Nonce: " << nonce << std::endl;
     std::cout << " |Block Reward: " << blockReward << std::endl;
+    std::cout << " |Previous Block Hash: " << prevHash << std::endl;
+    std::cout << " |Next Block Hash: " << nextHash << std::endl;
+}
+
+int Block::getAddressBalanceFromBlock(std::string& address) {
+    int balance = 0;
+    for (int i = 0; i < transactions.size(); i++) {
+        if (transactions[i].getSender() == address) {
+            balance -= transactions[i].getAmount();
+        }
+        else if (transactions[i].getRec() == address) {
+            balance += transactions[i].getAmount();
+        }
+    }
 }

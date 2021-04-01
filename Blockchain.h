@@ -10,17 +10,22 @@
 class Blockchain {
 private:
     unsigned int sz;
-    Block pendingBlock;
+    Block* pendingBlock;
     Block* tailBlock;
+    Block* headBlock;
     void setNewPendingBlock();
-    void addMinedBlock();
+    void addMinedBlock(std::string& address);
 
 
 
 public:
     Blockchain();
+    ~Blockchain();
     void newTransaction(int amt, std::string snd, std::string rec);
-    void minePendingBlock();
+    void minePendingBlock(std::string& address);
+    void printBlockchain();
+    std::string registerAddress(std::string user);
+    int getAddressBalance(std::string& address);
 
 
 

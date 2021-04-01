@@ -161,10 +161,22 @@ int main(int argc, char *argv[])
 //    b.mineBlock();
 
     Blockchain bc;
-    bc.newTransaction(3, "J75k4ly", "fjdkIIejf12K");
-    bc.newTransaction(5, "fjdke84jkf", "fffffddd3e");
-    bc.newTransaction(10, "f2719fj38fjd9", "a35b6eda63");
-    bc.minePendingBlock();
+//    bc.newTransaction(3, "J75k4ly", "fjdkIIejf12K");
+//    bc.newTransaction(5, "fjdke84jkf", "fffffddd3e");
+//    bc.newTransaction(10, "f2719fj38fjd9", "a35b6eda63");
+//    bc.minePendingBlock();
+//    bc.newTransaction(3, "J75k4ly", "fjdkIIejf12K");
+//    bc.newTransaction(5, "fjdke84jkf", "fffffddd3e");
+//    bc.minePendingBlock();
+//    bc.newTransaction(5, "fjdke84jkf", "fffffddd3e");
+//    bc.newTransaction(10, "f2719fj38fjd9", "a35b6eda63");
+//    bc.minePendingBlock();
+//    bc.printBlockchain();
+
+    std::string genAddress = bc.registerAddress("jim");
+    bc.minePendingBlock(genAddress);
+    std::cout << bc.getAddressBalance(genAddress);
+    bc.printBlockchain();
 
 
 

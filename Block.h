@@ -21,8 +21,6 @@ private:
     unsigned blockReward = 32;
     std::string prevHash;
     std::string nextHash;
-    Block* prev;
-    Block* next;
     std::string difficulty = "00000";
     void computeHash(int n);
 
@@ -32,13 +30,18 @@ private:
 public:
 
     Block(unsigned blockNum);
+    Block* prev;
+    Block* next;
     void mineBlock();
     std::vector<std::string> getTransactionHashes();
     std::string getHash();
+    unsigned getReward();
     void addTransaction(Transaction& t);
     void setNextBlock(Block* nextBlock);
     void setPrevBlock(Block* nextBlock);
     void printHeader();
+    int getAddressBalanceFromBlock(std::string& address);
+
 
 
 

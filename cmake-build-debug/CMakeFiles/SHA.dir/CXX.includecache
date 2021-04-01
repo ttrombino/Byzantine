@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Z/CLionProjects/Byzantine/Block.cpp
-Block.h
-C:/Users/Z/CLionProjects/Byzantine/Block.h
-
 C:/Users/Z/CLionProjects/Byzantine/Block.h
 Transaction.h
 C:/Users/Z/CLionProjects/Byzantine/Transaction.h
@@ -17,10 +13,6 @@ Merkle.h
 C:/Users/Z/CLionProjects/Byzantine/Merkle.h
 vector
 -
-
-C:/Users/Z/CLionProjects/Byzantine/Blockchain.cpp
-Blockchain.h
-C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
 
 C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
 Block.h

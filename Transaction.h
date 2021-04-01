@@ -16,7 +16,7 @@ class Transaction {
 private:
     std::string hash = "";
     unsigned blockNum;
-    unsigned amount;
+    int amount;
     std::string senderAddr = "";
     std::string recAddr = "";
     std::string dt;
@@ -43,6 +43,18 @@ public:
 
     void setBlockNum(unsigned block) {
         blockNum = block;
+    }
+
+    std::string getSender() {
+        return senderAddr;
+    }
+
+    std::string getRec() {
+        return recAddr;
+    }
+
+    unsigned getAmount(){
+        return amount;
     }
 
     void printTransaction() {
