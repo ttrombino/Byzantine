@@ -75,5 +75,6 @@ int Blockchain::getAddressBalance(std::string& address) {
         balance += current->getAddressBalanceFromBlock(address);
         current = current->next;
     }
+    return balance;
 }
 

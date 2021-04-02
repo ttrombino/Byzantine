@@ -19,7 +19,12 @@ Block::Block(unsigned block) {
 
 void Block::mineBlock() {
     std::vector<std::string> transactionHashes = getTransactionHashes();
-    merkleRoot = merkle(transactionHashes);
+    if (transactionHashes.size() != 0) {
+        merkleRoot = merkle(transactionHashes);
+    }
+    else {
+        merkleRoot = "";
+    }
 
     while (hash.substr(0,difficulty.size()) != difficulty) {
         computeHash(nonce);
@@ -99,4 +104,5 @@ int Block::getAddressBalanceFromBlock(std::string& address) {
             balance += transactions[i].getAmount();
         }
     }
+    return balance;
 }
