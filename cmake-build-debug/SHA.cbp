@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/main.cpp">
 			<Option target="SHA"/>
 		</Unit>
+		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/runBlockchain.cpp">
+			<Option target="SHA"/>
+		</Unit>
+		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/runBlockchain.h">
+			<Option target="SHA"/>
+		</Unit>
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/sha256.cpp">
 			<Option target="SHA"/>
 		</Unit>

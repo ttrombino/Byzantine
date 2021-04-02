@@ -62,6 +62,14 @@ void Blockchain::printBlockchain() {
     }
 }
 
+void Blockchain::printBlockchainWithTransactions() {
+    Block* current = headBlock;
+    while (current != NULL) {
+        current->printHeaderWithTransactions();
+        current = current->next;
+    }
+}
+
 std::string Blockchain::registerAddress(std::string user) {
     DateTime dt;
     std::string address = sha256(user + dt.getDT());

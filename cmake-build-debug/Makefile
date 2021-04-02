@@ -277,6 +277,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+runBlockchain.obj: runBlockchain.cpp.obj
+
+.PHONY : runBlockchain.obj
+
+# target to build an object file
+runBlockchain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/runBlockchain.cpp.obj
+.PHONY : runBlockchain.cpp.obj
+
+runBlockchain.i: runBlockchain.cpp.i
+
+.PHONY : runBlockchain.i
+
+# target to preprocess a source file
+runBlockchain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/runBlockchain.cpp.i
+.PHONY : runBlockchain.cpp.i
+
+runBlockchain.s: runBlockchain.cpp.s
+
+.PHONY : runBlockchain.s
+
+# target to generate assembly for a file
+runBlockchain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SHA.dir\build.make CMakeFiles/SHA.dir/runBlockchain.cpp.s
+.PHONY : runBlockchain.cpp.s
+
 sha256.obj: sha256.cpp.obj
 
 .PHONY : sha256.obj
@@ -328,6 +355,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... runBlockchain.obj
+	@echo ... runBlockchain.i
+	@echo ... runBlockchain.s
 	@echo ... sha256.obj
 	@echo ... sha256.i
 	@echo ... sha256.s

@@ -58,13 +58,13 @@ public:
     }
 
     void printTransaction() {
-        std::cout << "Transaction:             " << hash << std:: endl;
-        std::cout << "  |Time:                 " << dt << std:: endl;
-        std::cout << "  |Hash:                 " << hash << std::endl;
-        std::cout << "  |Block:                " <<  blockNum << std::endl;
-        std::cout << "  |Amount:               " <<  amount << std::endl;
-        std::cout << "  |Sender Address:       " <<  senderAddr << std::endl;
-        std::cout << "  |Recipient Address:    " <<  recAddr << std::endl;
+        std::cout << "    |Hash:             " << hash << std:: endl;
+        std::cout << "      |Time:                 " << dt << std:: endl;
+        std::cout << "      |Hash:                 " << hash << std::endl;
+        std::cout << "      |Block:                " <<  blockNum << std::endl;
+        std::cout << "      |Amount:               " <<  amount << std::endl;
+        std::cout << "      |Sender Address:       " <<  senderAddr << std::endl;
+        std::cout << "      |Recipient Address:    " <<  recAddr << std::endl;
 
     }
 

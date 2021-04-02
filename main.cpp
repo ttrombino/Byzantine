@@ -175,23 +175,19 @@ int main(int argc, char *argv[])
 
     std::string jim = bc.registerAddress("jim");
     bc.minePendingBlock(jim);
-    bc.printBlockchain();
 
     bc.minePendingBlock(jim);
-    bc.printBlockchain();
 
     std::string bill = bc.registerAddress("bill");
     bc.newTransaction(15, jim, bill);
     bc.minePendingBlock(jim);
-    bc.printBlockchain();
-    std::cout << bc.getAddressBalance(jim) << std::endl;
 
     std::string frank = bc.registerAddress("frank");
     bc.newTransaction(10, jim, bill);
     bc.newTransaction(6, bill, frank);
     bc.newTransaction(4, frank, jim);
     bc.minePendingBlock(jim);
-    bc.printBlockchain();
+    bc.printBlockchainWithTransactions();
     std::cout << "Jim balance: " << bc.getAddressBalance(jim) << std::endl;
     std::cout << "Bill balance: " << bc.getAddressBalance(bill) << std::endl;
     std::cout << "Frank balance: " << bc.getAddressBalance(frank) << std::endl;

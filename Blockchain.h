@@ -26,6 +26,7 @@ public:
     void printBlockchain();
     std::string registerAddress(std::string user);
     int getAddressBalance(std::string& address);
+    void printBlockchainWithTransactions();
 
 
 

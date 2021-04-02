@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SHA.dir/Merkle.cpp.obj"
   "CMakeFiles/SHA.dir/Transaction.cpp.obj"
   "CMakeFiles/SHA.dir/main.cpp.obj"
+  "CMakeFiles/SHA.dir/runBlockchain.cpp.obj"
   "CMakeFiles/SHA.dir/sha256.cpp.obj"
   "SHA.exe"
   "SHA.exe.manifest"

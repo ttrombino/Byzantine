@@ -21,7 +21,7 @@ private:
     unsigned blockReward = 32;
     std::string prevHash;
     std::string nextHash;
-    std::string difficulty = "00000";
+    std::string difficulty = "0000";
     void computeHash(int n);
 
 
@@ -41,6 +41,8 @@ public:
     void setPrevBlock(Block* nextBlock);
     void printHeader();
     int getAddressBalanceFromBlock(std::string& address);
+    void printTransactions();
+    void printHeaderWithTransactions();
 
 
 

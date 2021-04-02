@@ -86,12 +86,26 @@ void Block::printHeader() {
     std::cout << " |Hash: " << hash << std::endl;
     std::cout << " |Time Created: " << timeCreated << std::endl;
     std::cout << " |Time Added: " << timeMined << std::endl;
-    std::cout << " |Transactions: " << transactions.size() << std::endl;
     std::cout << " |Merkle root: " << merkleRoot << std::endl;
     std::cout << " |Nonce: " << nonce << std::endl;
     std::cout << " |Block Reward: " << blockReward << std::endl;
     std::cout << " |Previous Block Hash: " << prevHash << std::endl;
     std::cout << " |Next Block Hash: " << nextHash << std::endl;
+    std::cout << " |Transactions: " << transactions.size() << std::endl;
+}
+
+void Block::printTransactions() {
+
+    std::cout << "  |Transactions" << std::endl;
+    for (int i = 0; i < transactions.size(); i++) {
+        transactions[i].printTransaction();
+    }
+
+}
+
+void Block::printHeaderWithTransactions() {
+    printHeader();
+    printTransactions();
 }
 
 int Block::getAddressBalanceFromBlock(std::string& address) {
