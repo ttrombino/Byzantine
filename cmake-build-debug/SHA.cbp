@@ -92,6 +92,9 @@
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/Blockchain.h">
 			<Option target="SHA"/>
 		</Unit>
+		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/BlockchainExceptions.h">
+			<Option target="SHA"/>
+		</Unit>
 		<Unit filename="C:/Users/Z/CLionProjects/Byzantine/DateTime.h">
 			<Option target="SHA"/>
 		</Unit>

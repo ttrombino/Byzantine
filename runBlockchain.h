@@ -10,10 +10,22 @@
 class runBlockchain {
 
 private:
-    void showCommandsScreen();
+    Blockchain bc;
 
 public:
+
+    void showCommandsScreen();
     runBlockchain();
+    char getCommand();
+    void runCommand(char& command);
+    void rbRegisterAddress();
+    void rbMinePendingBlock();
+    void rbNewTransaction();
+    void rbGetAddressBalance();
+    void rbPrintBlockchain();
+    void run();
+
+
 
 
 };

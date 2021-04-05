@@ -14,6 +14,10 @@ C:/Users/Z/CLionProjects/Byzantine/Merkle.h
 vector
 -
 
+C:/Users/Z/CLionProjects/Byzantine/Blockchain.cpp
+Blockchain.h
+C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
+
 C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
 Block.h
 C:/Users/Z/CLionProjects/Byzantine/Block.h
@@ -43,22 +47,6 @@ iostream
 -
 cstdio
 -
-
-C:/Users/Z/CLionProjects/Byzantine/main.cpp
-iostream
--
-sha256.h
-C:/Users/Z/CLionProjects/Byzantine/sha256.h
-Merkle.h
-C:/Users/Z/CLionProjects/Byzantine/Merkle.h
-DateTime.h
-C:/Users/Z/CLionProjects/Byzantine/DateTime.h
-Transaction.h
-C:/Users/Z/CLionProjects/Byzantine/Transaction.h
-Block.h
-C:/Users/Z/CLionProjects/Byzantine/Block.h
-Blockchain.h
-C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
 
 C:/Users/Z/CLionProjects/Byzantine/sha256.h
 string

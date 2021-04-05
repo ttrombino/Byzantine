@@ -5,10 +5,12 @@
 #include "Transaction.h"
 #include "Block.h"
 #include "Blockchain.h"
+#include "runBlockchain.h"
 
 using std::string;
 using std::cout;
 using std::endl;
+
 
 int main(int argc, char *argv[])
 {
@@ -173,26 +175,32 @@ int main(int argc, char *argv[])
 //    bc.minePendingBlock();
 //    bc.printBlockchain();
 
-    std::string jim = bc.registerAddress("jim");
-    bc.minePendingBlock(jim);
+//    std::string jim = bc.registerAddress("jim");
+//    bc.minePendingBlock(jim);
+//
+//    bc.minePendingBlock(jim);
+//
+//    std::string bill = bc.registerAddress("bill");
+//    bc.newTransaction(15, jim, bill);
+//    bc.minePendingBlock(jim);
+//
+//    std::string frank = bc.registerAddress("frank");
+//    bc.newTransaction(10, jim, bill);
+//    bc.newTransaction(6, bill, frank);
+//    bc.newTransaction(4, frank, jim);
+//    bc.minePendingBlock(jim);
+//    bc.printBlockchainWithTransactions();
+//    std::cout << "Jim balance: " << bc.getAddressBalance(jim) << std::endl;
+//    std::cout << "Bill balance: " << bc.getAddressBalance(bill) << std::endl;
+//    std::cout << "Frank balance: " << bc.getAddressBalance(frank) << std::endl;
 
-    bc.minePendingBlock(jim);
 
-    std::string bill = bc.registerAddress("bill");
-    bc.newTransaction(15, jim, bill);
-    bc.minePendingBlock(jim);
+//    runBlockchain rb;
+//    rb.showCommandsScreen();
+//    rb.getCommand();
 
-    std::string frank = bc.registerAddress("frank");
-    bc.newTransaction(10, jim, bill);
-    bc.newTransaction(6, bill, frank);
-    bc.newTransaction(4, frank, jim);
-    bc.minePendingBlock(jim);
-    bc.printBlockchainWithTransactions();
-    std::cout << "Jim balance: " << bc.getAddressBalance(jim) << std::endl;
-    std::cout << "Bill balance: " << bc.getAddressBalance(bill) << std::endl;
-    std::cout << "Frank balance: " << bc.getAddressBalance(frank) << std::endl;
-
-
+    runBlockchain rb;
+    rb.run();
 
 
 

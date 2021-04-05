@@ -5,6 +5,7 @@
 #ifndef BLOCKCHAIN_H
 #define BLOCKCHAIN_H
 #include "Block.h"
+#include "BlockchainExceptions.h"
 
 
 class Blockchain {
@@ -16,8 +17,6 @@ private:
     void setNewPendingBlock();
     void addMinedBlock(std::string& address);
 
-
-
 public:
     Blockchain();
     ~Blockchain();
@@ -27,8 +26,7 @@ public:
     std::string registerAddress(std::string user);
     int getAddressBalance(std::string& address);
     void printBlockchainWithTransactions();
-
-
+    void verifyTransaction(int amt, std::string snd);
 
 };
 

@@ -22,9 +22,20 @@ Blockchain::~Blockchain() {
 }
 
 void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
-    Transaction tr(amt, snd, rec);
-    tr.calculateHash();
-    pendingBlock->addTransaction(tr);
+
+    try {
+        Transaction tr(amt, snd, rec);
+        verifyTransaction(amt, snd);
+        tr.calculateHash();
+        pendingBlock->addTransaction(tr);
+        std::cout << "Transaction complete" << std::endl;
+        std::cout << amt << " sent from " << snd << " to " << rec << std::endl;
+    } catch(BalanceException& b) {
+        std::cout << "Error: transaction invalid " << std::endl;
+        std::cout << b.what() << std::endl;
+        std::cout << snd << " balance: " << getAddressBalance(snd) << std::endl;
+    }
+
 }
 
 void Blockchain::minePendingBlock(std::string& address){
@@ -45,7 +56,7 @@ void Blockchain::addMinedBlock(std::string& address) {
     sz++;
 
     setNewPendingBlock();
-    newTransaction(tailBlock->getReward(), "Mine", address);
+    newTransaction(tailBlock->getReward(), "Mine Reward", address);
 
 }
 
@@ -84,5 +95,17 @@ int Blockchain::getAddressBalance(std::string& address) {
         current = current->next;
     }
     return balance;
+}
+
+void Blockchain::verifyTransaction(int amt, std::string snd) {
+    if (getAddressBalance(snd) - amt < 0) {
+        throw BalanceException();
+    }
+    else if ()
+
+}
+
+void Blockchain::verifyAddress(std::string& address) {
+    
 }
 
