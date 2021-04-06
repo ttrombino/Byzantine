@@ -120,3 +120,14 @@ int Block::getAddressBalanceFromBlock(std::string& address) {
     }
     return balance;
 }
+
+bool Block::findAddressInBlock(std::string& address) {
+    bool found = false;
+    for (int i = 0; i < transactions.size(); i++) {
+        if (transactions[i].getSender() == address || transactions[i].getRec() == address ) {
+            found = true;
+            return found;
+        }
+    }
+    return found;
+}

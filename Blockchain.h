@@ -26,7 +26,8 @@ public:
     std::string registerAddress(std::string user);
     int getAddressBalance(std::string& address);
     void printBlockchainWithTransactions();
-    void verifyTransaction(int amt, std::string snd);
+    void verifyTransaction(int amt, std::string snd, std::string rec);
+    bool verifyAddress(std::string& address);
 
 };
 

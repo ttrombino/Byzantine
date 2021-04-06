@@ -7,8 +7,8 @@
 Blockchain::Blockchain() {
     sz = 0;
     pendingBlock = new Block(sz);
-    tailBlock = pendingBlock;
-    headBlock = pendingBlock;
+    tailBlock = NULL;
+    headBlock = NULL;
 }
 
 Blockchain::~Blockchain() {
@@ -24,17 +24,24 @@ Blockchain::~Blockchain() {
 void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
 
     try {
+        verifyTransaction(amt, snd, rec);
         Transaction tr(amt, snd, rec);
-        verifyTransaction(amt, snd);
         tr.calculateHash();
         pendingBlock->addTransaction(tr);
         std::cout << "Transaction complete" << std::endl;
         std::cout << amt << " sent from " << snd << " to " << rec << std::endl;
+    } catch(InvalidSendAddress& b) {
+        std::cout << "Error: transaction invalid " << std::endl;
+        std::cout << b.what() << std::endl;
+    } catch(InvalidRecAddress& b) {
+        std::cout << "Error: transaction invalid " << std::endl;
+        std::cout << b.what() << std::endl;
     } catch(BalanceException& b) {
         std::cout << "Error: transaction invalid " << std::endl;
         std::cout << b.what() << std::endl;
         std::cout << snd << " balance: " << getAddressBalance(snd) << std::endl;
     }
+
 
 }
 
@@ -97,15 +104,26 @@ int Blockchain::getAddressBalance(std::string& address) {
     return balance;
 }
 
-void Blockchain::verifyTransaction(int amt, std::string snd) {
-    if (getAddressBalance(snd) - amt < 0) {
+void Blockchain::verifyTransaction(int amt, std::string snd, std::string rec) {
+    if (!verifyAddress(snd)) {
+        throw InvalidSendAddress();
+    }
+    else if (!verifyAddress(rec)) {
+        throw InvalidRecAddress();
+    }
+    else if (getAddressBalance(snd) - amt < 0) {
         throw BalanceException();
     }
-    else if ()
 
 }
 
-void Blockchain::verifyAddress(std::string& address) {
-    
+bool Blockchain::verifyAddress(std::string& address) {
+    Block* current = headBlock;
+    bool found = false;
+    while (current != NULL) {
+        found = current->findAddressInBlock(address);
+        std::cout << "verify" << std::endl;
+    }
+    return found;
 }
 

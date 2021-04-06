@@ -43,6 +43,7 @@ public:
     int getAddressBalanceFromBlock(std::string& address);
     void printTransactions();
     void printHeaderWithTransactions();
+    bool findAddressInBlock(std::string& address);
 
 
 

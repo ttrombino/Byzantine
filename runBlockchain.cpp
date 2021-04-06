@@ -92,6 +92,8 @@ void runBlockchain::rbNewTransaction() {
     std::cin >> amount;
     std::cin.ignore();
 
+    bc.verifyTransaction(amount, sender, rec);
+
     bc.newTransaction(amount, sender, rec);
 
 
