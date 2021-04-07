@@ -6,21 +6,25 @@
 #define BLOCKCHAINEXCEPTIONS_H
 #include <exception>
 
-class BalanceException : public std::exception {
+class BlockchainException : public std::exception {
+
+};
+
+class BalanceException : public BlockchainException {
 public:
     const char * what() const throw() {
         return "Insufficient address balance for transaction amount.";
     }
 };
 
-class InvalidSendAddress : public std::exception {
+class InvalidSendAddress : public BlockchainException {
 public:
     const char * what() const throw() {
         return "Sender address not registered";
     }
 };
 
-class InvalidRecAddress : public std::exception {
+class InvalidRecAddress : public BlockchainException {
 public:
     const char * what() const throw() {
         return "Recipient address not registered";

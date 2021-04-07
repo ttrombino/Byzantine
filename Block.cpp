@@ -111,7 +111,10 @@ void Block::printHeaderWithTransactions() {
 int Block::getAddressBalanceFromBlock(std::string& address) {
     int balance = 0;
     for (int i = 0; i < transactions.size(); i++) {
-        if (transactions[i].getSender() == address) {
+        if (transactions[i].getSender() == address && transactions[i].getRec() == address) {
+            //Do not adjust balance since this is a legal but net-zero transaction.
+        }
+        else if (transactions[i].getSender() == address) {
             balance -= transactions[i].getAmount();
         }
         else if (transactions[i].getRec() == address) {

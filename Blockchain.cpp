@@ -24,7 +24,9 @@ Blockchain::~Blockchain() {
 void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
 
     try {
-        verifyTransaction(amt, snd, rec);
+        if (snd != "Mine Reward") {
+            verifyTransaction(amt, snd, rec);
+        }
         Transaction tr(amt, snd, rec);
         tr.calculateHash();
         pendingBlock->addTransaction(tr);
@@ -122,8 +124,10 @@ bool Blockchain::verifyAddress(std::string& address) {
     bool found = false;
     while (current != NULL) {
         found = current->findAddressInBlock(address);
-        std::cout << "verify" << std::endl;
+        current = current->next;
+        //std::cout << "verify" << std::endl;
     }
+    found = pendingBlock->findAddressInBlock(address);
     return found;
 }
 

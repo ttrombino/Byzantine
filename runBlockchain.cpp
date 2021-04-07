@@ -116,11 +116,24 @@ void runBlockchain::rbPrintBlockchain() {
 }
 
 void runBlockchain::run() {
+
     showCommandsScreen();
     char input = 'a';
     while (input != 'q') {
         input = getCommand();
-        runCommand(input);
+        try {
+            runCommand(input);
+        } catch(InvalidSendAddress& b) {
+            std::cout << "Error: transaction invalid " << std::endl;
+            std::cout << b.what() << std::endl;
+        } catch(InvalidRecAddress& b) {
+            std::cout << "Error: transaction invalid " << std::endl;
+            std::cout << b.what() << std::endl;
+        } catch(BalanceException& b) {
+            std::cout << "Error: transaction invalid " << std::endl;
+            std::cout << b.what() << std::endl;
+        }
     }
+
 
 }
