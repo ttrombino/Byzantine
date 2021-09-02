@@ -91,6 +91,8 @@ void Block::printHeader() {
     std::cout << " |Block Reward: " << blockReward << std::endl;
     std::cout << " |Previous Block Hash: " << prevHash << std::endl;
     std::cout << " |Next Block Hash: " << nextHash << std::endl;
+    std::cout << " |Registered Addresses: " << registeredAddresses.size() << std::endl;
+    printAddresses();
     std::cout << " |Transactions: " << transactions.size() << std::endl;
 }
 
@@ -99,6 +101,13 @@ void Block::printTransactions() {
     std::cout << "  |Transactions" << std::endl;
     for (int i = 0; i < transactions.size(); i++) {
         transactions[i].printTransaction();
+    }
+
+}
+
+void Block::printAddresses() {
+    for (int i = 0; i < registeredAddresses.size(); i++) {
+        std::cout << "    |Address:             " << registeredAddresses[i] << std::endl;
     }
 
 }
@@ -124,10 +133,14 @@ int Block::getAddressBalanceFromBlock(std::string& address) {
     return balance;
 }
 
+void Block::addAddressToBlock(std::string& address) {
+    registeredAddresses.push_back(address);
+}
+
 bool Block::findAddressInBlock(std::string& address) {
     bool found = false;
-    for (int i = 0; i < transactions.size(); i++) {
-        if (transactions[i].getSender() == address || transactions[i].getRec() == address ) {
+    for (int i = 0; i < registeredAddresses.size(); i++) {
+        if (registeredAddresses[i] == address) {
             found = true;
             return found;
         }

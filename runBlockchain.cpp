@@ -117,9 +117,10 @@ void runBlockchain::rbPrintBlockchain() {
 
 void runBlockchain::run() {
 
-    showCommandsScreen();
+    //showCommandsScreen();
     char input = 'a';
     while (input != 'q') {
+        showCommandsScreen();
         input = getCommand();
         try {
             runCommand(input);

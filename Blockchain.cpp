@@ -93,6 +93,7 @@ void Blockchain::printBlockchainWithTransactions() {
 std::string Blockchain::registerAddress(std::string user) {
     DateTime dt;
     std::string address = sha256(user + dt.getDT());
+    pendingBlock->addAddressToBlock(address);
     return address;
 }
 
@@ -124,10 +125,15 @@ bool Blockchain::verifyAddress(std::string& address) {
     bool found = false;
     while (current != NULL) {
         found = current->findAddressInBlock(address);
-        current = current->next;
+        if (found == true) {
+            return found;
+        }
+        else {
+            current = current->next;
+        }
         //std::cout << "verify" << std::endl;
     }
-    found = pendingBlock->findAddressInBlock(address);
+    //found = pendingBlock->findAddressInBlock(address);
     return found;
 }
 

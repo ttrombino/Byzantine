@@ -15,6 +15,7 @@ private:
     std::string timeCreated;
     std::string timeMined;
     std::vector<Transaction> transactions;
+    std::vector<std::string> registeredAddresses;
     unsigned blockNum;
     std::string merkleRoot;
     unsigned nonce;
@@ -43,6 +44,8 @@ public:
     int getAddressBalanceFromBlock(std::string& address);
     void printTransactions();
     void printHeaderWithTransactions();
+    void addAddressToBlock(std::string& address);
+    void printAddresses();
     bool findAddressInBlock(std::string& address);
 
 
