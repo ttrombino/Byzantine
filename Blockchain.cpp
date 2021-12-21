@@ -3,7 +3,7 @@
 //
 
 #include "Blockchain.h"
-
+//Creates a blockchain using the singly linked list data structure
 Blockchain::Blockchain() {
     sz = 0;
     pendingBlock = new Block(sz);
@@ -21,6 +21,7 @@ Blockchain::~Blockchain() {
     }
 }
 
+//Creates a new transaction depending on the validity of the sender and recipient address
 void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
 
     try {
@@ -31,7 +32,7 @@ void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
         tr.calculateHash();
         pendingBlock->addTransaction(tr);
         std::cout << "Transaction complete" << std::endl;
-        std::cout << amt << " sent from " << snd << " to " << rec << std::endl;
+        std::cout << amt << " BYZ sent from " << snd << " to " << rec << std::endl;
     } catch(InvalidSendAddress& b) {
         std::cout << "Error: transaction invalid " << std::endl;
         std::cout << b.what() << std::endl;
@@ -43,8 +44,6 @@ void Blockchain::newTransaction(int amt, std::string snd, std::string rec){
         std::cout << b.what() << std::endl;
         std::cout << snd << " balance: " << getAddressBalance(snd) << std::endl;
     }
-
-
 }
 
 void Blockchain::minePendingBlock(std::string& address){
@@ -52,6 +51,7 @@ void Blockchain::minePendingBlock(std::string& address){
     addMinedBlock(address);
 }
 
+//Adds the mined block to the blockchain and provides the reward to the miner on the next block's transactions
 void Blockchain::addMinedBlock(std::string& address) {
     if (sz == 0) {
         tailBlock = pendingBlock;
@@ -66,7 +66,6 @@ void Blockchain::addMinedBlock(std::string& address) {
 
     setNewPendingBlock();
     newTransaction(tailBlock->getReward(), "Mine Reward", address);
-
 }
 
 void Blockchain::setNewPendingBlock() {
@@ -90,6 +89,7 @@ void Blockchain::printBlockchainWithTransactions() {
     }
 }
 
+//Creates the public address using a SHA256 hash of the user name and the current date+time
 std::string Blockchain::registerAddress(std::string user) {
     DateTime dt;
     std::string address = sha256(user + dt.getDT());
@@ -97,6 +97,7 @@ std::string Blockchain::registerAddress(std::string user) {
     return address;
 }
 
+//Traverses the entire blockchain to get the given address's balance from each block
 int Blockchain::getAddressBalance(std::string& address) {
     Block* current = headBlock;
     int balance = 0;
@@ -120,6 +121,7 @@ void Blockchain::verifyTransaction(int amt, std::string snd, std::string rec) {
 
 }
 
+//Searches the entire blockchain to ensure the given address has been registered
 bool Blockchain::verifyAddress(std::string& address) {
     Block* current = headBlock;
     bool found = false;
@@ -131,9 +133,7 @@ bool Blockchain::verifyAddress(std::string& address) {
         else {
             current = current->next;
         }
-        //std::cout << "verify" << std::endl;
     }
-    //found = pendingBlock->findAddressInBlock(address);
     return found;
 }
 

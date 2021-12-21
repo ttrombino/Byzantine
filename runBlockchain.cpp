@@ -106,7 +106,7 @@ void runBlockchain::rbGetAddressBalance() {
     std::cin >> address;
     std::cin.ignore();
 
-    std::cout << address << " balance: " << bc.getAddressBalance(address) << std::endl;
+    std::cout << address << " balance: " << bc.getAddressBalance(address) << " BYZ" << std::endl;
 
 
 }

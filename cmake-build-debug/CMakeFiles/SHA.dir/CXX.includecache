@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Z/CLionProjects/Byzantine/Block.cpp
+Block.h
+C:/Users/Z/CLionProjects/Byzantine/Block.h
+
 C:/Users/Z/CLionProjects/Byzantine/Block.h
 Transaction.h
 C:/Users/Z/CLionProjects/Byzantine/Transaction.h
@@ -36,11 +40,23 @@ ctime
 stdio.h
 -
 
+C:/Users/Z/CLionProjects/Byzantine/Merkle.cpp
+iostream
+-
+Merkle.h
+C:/Users/Z/CLionProjects/Byzantine/Merkle.h
+sha256.h
+C:/Users/Z/CLionProjects/Byzantine/sha256.h
+
 C:/Users/Z/CLionProjects/Byzantine/Merkle.h
 string
 -
 vector
 -
+
+C:/Users/Z/CLionProjects/Byzantine/Transaction.cpp
+Transaction.h
+C:/Users/Z/CLionProjects/Byzantine/Transaction.h
 
 C:/Users/Z/CLionProjects/Byzantine/Transaction.h
 string
@@ -53,6 +69,40 @@ iostream
 -
 cstdio
 -
+
+C:/Users/Z/CLionProjects/Byzantine/main.cpp
+iostream
+-
+sha256.h
+C:/Users/Z/CLionProjects/Byzantine/sha256.h
+Merkle.h
+C:/Users/Z/CLionProjects/Byzantine/Merkle.h
+DateTime.h
+C:/Users/Z/CLionProjects/Byzantine/DateTime.h
+Transaction.h
+C:/Users/Z/CLionProjects/Byzantine/Transaction.h
+Block.h
+C:/Users/Z/CLionProjects/Byzantine/Block.h
+Blockchain.h
+C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
+runBlockchain.h
+C:/Users/Z/CLionProjects/Byzantine/runBlockchain.h
+
+C:/Users/Z/CLionProjects/Byzantine/runBlockchain.cpp
+runBlockchain.h
+C:/Users/Z/CLionProjects/Byzantine/runBlockchain.h
+
+C:/Users/Z/CLionProjects/Byzantine/runBlockchain.h
+Blockchain.h
+C:/Users/Z/CLionProjects/Byzantine/Blockchain.h
+
+C:/Users/Z/CLionProjects/Byzantine/sha256.cpp
+cstring
+-
+fstream
+-
+sha256.h
+C:/Users/Z/CLionProjects/Byzantine/sha256.h
 
 C:/Users/Z/CLionProjects/Byzantine/sha256.h
 string

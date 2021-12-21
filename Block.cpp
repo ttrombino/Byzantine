@@ -17,6 +17,7 @@ Block::Block(unsigned block) {
     nonce = 0;
 }
 
+//Mine the current pending block using SHA256 proof of work via a merkle tree and the preset difficulty
 void Block::mineBlock() {
     std::vector<std::string> transactionHashes = getTransactionHashes();
     if (transactionHashes.size() != 0) {
@@ -26,6 +27,7 @@ void Block::mineBlock() {
         merkleRoot = "";
     }
 
+    //Computes the SHA256 depending on if the result matches the difficulty requirements
     while (hash.substr(0,difficulty.size()) != difficulty) {
         computeHash(nonce);
         nonce++;
@@ -38,12 +40,9 @@ void Block::mineBlock() {
     std::cout << "Time: " << timeMined << std::endl;
     std::cout << "Hash: " << hash << std::endl;
     std::cout << "Nonce: " << nonce << std::endl;
-
-    //printHeader();
-
-
 }
 
+//Puts all the transaction hashes into a vector
 std::vector<std::string> Block::getTransactionHashes() {
     std::vector<std::string> transactionHashes;
     for (int i = 0; i < transactions.size(); i++) {
@@ -52,11 +51,13 @@ std::vector<std::string> Block::getTransactionHashes() {
     return transactionHashes;
 }
 
+//Creates the block's SHA256 hash using the time, block number, merkle root and the nonce
 void Block::computeHash(int n) {
     std::string headerSum = hash + timeCreated + std::to_string(blockNum) + merkleRoot + std::to_string(n);
     hash = sha256(headerSum);
 }
 
+//Add transaction to the list of transactions
 void Block::addTransaction(Transaction& t) {
     t.setBlockNum(blockNum);
     transactions.push_back(t);
@@ -117,15 +118,18 @@ void Block::printHeaderWithTransactions() {
     printTransactions();
 }
 
+//Computes the balance by calculating each transaction so that all balances can be verified exclusively on the blockchain
 int Block::getAddressBalanceFromBlock(std::string& address) {
     int balance = 0;
     for (int i = 0; i < transactions.size(); i++) {
         if (transactions[i].getSender() == address && transactions[i].getRec() == address) {
             //Do not adjust balance since this is a legal but net-zero transaction.
         }
+        //If the address was the sender, subtract the amount
         else if (transactions[i].getSender() == address) {
             balance -= transactions[i].getAmount();
         }
+        //If the address was the recipient, add the amount
         else if (transactions[i].getRec() == address) {
             balance += transactions[i].getAmount();
         }
@@ -137,6 +141,7 @@ void Block::addAddressToBlock(std::string& address) {
     registeredAddresses.push_back(address);
 }
 
+//Checks if entered address is in the block so that the transaction can be verified
 bool Block::findAddressInBlock(std::string& address) {
     bool found = false;
     for (int i = 0; i < registeredAddresses.size(); i++) {
