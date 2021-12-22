@@ -14,8 +14,8 @@ and destroyed when the program is closed. Therefore, the Byzantine economy only 
 Each block contains a list of transactions made between various users along with 
 a header giving the block size and the block's hash ID. 
 
-## Generating the Byzantine currency
-The Byzantine cryptocurrency is generated when a users "mines" a block of transactions. That is, the user must use the computer to find a SHA256 hash 
+## Generating Currency
+The Byzantine cryptocurrency (BYZ) is generated when a users "mines" a block of transactions. That is, the user must use the computer to find a SHA256 hash 
 that matches the given difficulty (i.e. the set leading 0's of the hash). This is very similar to Bitcoin's Hashcash-based proof of work system explained [here](https://en.wikipedia.org/wiki/Hashcash#Bitcoin_mining).
 The user that successfully mines the block is given a flat amount of currency that may be sent to other users. The only way to add BYZ to the blockchain economy is by mining these blocks. 
 
