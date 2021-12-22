@@ -19,7 +19,7 @@ The Byzantine cryptocurrency is generated when a users "mines" a block of transa
 that matches the given difficulty (i.e. the set leading 0's of the hash). This is very similar to Bitcoin's Hashcash-based proof of work system explained [here](https://en.wikipedia.org/wiki/Hashcash#Bitcoin_mining).
 The user that successfully mines the block is given a flat amount of currency that may be sent to other users. The only way to add BYZ to the blockchain economy is by mining these blocks. 
 
-## Exchanging currency 
+## Exchanging BYZ
 Each time a user makes a transactions, the user's balance is verified via the traversal of the entire linked list. The user's balance
 is calculated through the sum of their transactions backtraced to when the address was first created. Thus, every user has the same ledger of transactions
 to determine their balance ensuring it's validity. 
