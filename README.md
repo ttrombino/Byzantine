@@ -9,7 +9,8 @@ The user can also "mine" the Byzantine currency via proof of work protocol simil
 
 
 ## How To Run
-Simply clone the repository and run the `SHA.exe` executable file in the `cmake-build-debug` folder.
+For Windows machines, simply clone the repository and run the `SHA.exe` executable file in the `cmake-build-debug` folder.
+OS X and Linux, however, will require cloning and running the program on an IDE.
 
 ## Structure
 Byzantine's blockchain is a simple dynamically allocated linked list that is created when the first block is "mined"
