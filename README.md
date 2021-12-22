@@ -5,6 +5,9 @@ The program allows a user to develop a blockchain via the terminal window using 
 between other users. After registration, each user is given a unique address from which currency can be sent and recieved.  
 The user can also "mine" the Byzantine currency via proof of work protocol similar to Bitcoin.  
 
+[**Video demonstration link**](https://youtu.be/Nf9KBh_PS60)
+
+
 ## How To Run
 Simply clone the repository and run the `SHA.exe` executable file in the `cmake-build-debug` folder.
 
